@@ -1,141 +1,774 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StageBacker Agency helps speakers, experts, and thought leaders secure speaking opportunities and grow their visibility through strategic outreach and opportunity development."
+    />
+    <title>StageBacker Agency | Speaker Outreach & Opportunity Development</title>
+    <meta property="og:title" content="StageBacker Agency" />
+    <meta
+      property="og:description"
+      content="Strategic speaker outreach, opportunity development, and event positioning for high-impact experts."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-alt: #111a2d;
+        --panel: rgba(17, 26, 45, 0.84);
+        --panel-strong: #131d31;
+        --text: #edf3ff;
+        --muted: #b9c5e2;
+        --accent: #d9b66e;
+        --accent-strong: #f0c871;
+        --accent-soft: rgba(217, 182, 110, 0.18);
+        --line: rgba(255, 255, 255, 0.12);
+        --success: #9de3b4;
+        --shadow: 0 25px 60px rgba(4, 7, 17, 0.5);
+      }
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>Local index - HTTrack Website Copier</title>
-  <!-- Mirror and index made by HTTrack Website Copier/3.50-5 [XR&CO] -->
-	<style type="text/css">
-	<!--
+      * { box-sizing: border-box; }
 
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
+      html {
+        scroll-behavior: smooth;
+      }
 
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(68, 90, 135, 0.35), transparent 28%),
+          radial-gradient(circle at right, rgba(217, 182, 110, 0.12), transparent 23%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
 
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-#siteNavigation .current { background-color: #ccd; }
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
+      .container {
+        width: min(1120px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
 
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(11, 16, 32, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
 
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+        gap: 1rem;
+      }
 
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
 
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--accent), #b78a2d);
+        color: #121826;
+        font-weight: 900;
+      }
 
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        color: var(--muted);
+        font-size: 0.97rem;
+      }
 
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
+      .nav-links a:hover {
+        color: var(--text);
+      }
 
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
+      .nav-cta,
+      .button,
+      .button-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: 0.25s ease;
+      }
 
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
+      .nav-cta,
+      .button {
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #101726;
+        box-shadow: 0 15px 35px rgba(217, 182, 110, 0.28);
+      }
 
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
+      .button:hover,
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 36px rgba(217, 182, 110, 0.38);
+      }
 
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
+      .button-secondary {
+        background: transparent;
+        border-color: var(--line);
+        color: var(--text);
+      }
 
+      .button-secondary:hover {
+        border-color: rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.03);
+      }
 
-// -->
-</style>
+      .hero {
+        padding: 5rem 0 4rem;
+      }
 
-</head>
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 2rem;
+      }
 
-<body>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+        background: var(--accent-soft);
+        border: 1px solid rgba(217, 182, 110, 0.28);
+        border-radius: 999px;
+        padding: 0.6rem 0.9rem;
+      }
 
-<H1 ALIGN=Center>Index of locally available sites:</H1>
-	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="independentboss.com.ng/index.html">
-						One moment, please...
-					</A>		
-			</TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<BR>
-	<BR>
-  	<H6 ALIGN="RIGHT">
-	<I>Mirror and index made by HTTrack Website Copier [XR&amp;CO]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.50-5 [XR&CO] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=independentboss.com.ng/index.html">
+      h1 {
+        font-size: clamp(2.7rem, 5vw, 5rem);
+        line-height: 1.04;
+        margin: 1rem 0 1rem;
+        letter-spacing: -0.06em;
+      }
 
+      .lead {
+        margin: 0 0 2rem;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 1998 Xavier Roche &amp; other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+      }
 
-</body>
+      .stat {
+        min-width: 110px;
+      }
 
+      .stat strong {
+        display: block;
+        font-size: 1.7rem;
+        line-height: 1.1;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, rgba(17,26,45,0.7), rgba(11,16,32,0.96));
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 1.35rem;
+      }
+
+      .feature-window {
+        background: linear-gradient(135deg, rgba(217,182,110,0.08), rgba(85,103,146,0.14));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 22px;
+        padding: 1.5rem;
+      }
+
+      .mini-label {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        color: var(--accent-strong);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      .opportunity-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .opportunity-list li {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 14px;
+        padding: 0.8rem 0.9rem;
+      }
+
+      .check {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-grid;
+        place-items: center;
+        background: rgba(157, 227, 180, 0.18);
+        color: var(--success);
+        font-weight: 900;
+      }
+
+      section {
+        padding: 2.25rem 0 4rem;
+      }
+
+      .section-header {
+        max-width: 700px;
+        margin-bottom: 2rem;
+      }
+
+      .section-header p {
+        color: var(--muted);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 3vw, 3.2rem);
+        letter-spacing: -0.05em;
+        margin: 0 0 0.75rem;
+      }
+
+      .services-grid,
+      .process-grid,
+      .testimonial-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 1.5rem;
+        box-shadow: 0 24px 50px rgba(6, 10, 21, 0.18);
+      }
+
+      .icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, rgba(217,182,110,0.18), rgba(98,116,171,0.15));
+        border: 1px solid rgba(217,182,110,0.22);
+        color: var(--accent-strong);
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.7rem;
+        font-size: 1.3rem;
+      }
+
+      .card p,
+      .step p,
+      .quote {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(217,182,110,0.14);
+        color: var(--accent-strong);
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+
+      .step h3 {
+        margin: 0 0 0.65rem;
+      }
+
+      .highlight-band {
+        padding: 1.5rem 0 1rem;
+      }
+
+      .highlight-box {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 1.5rem;
+        background: linear-gradient(135deg, rgba(217,182,110,0.08), rgba(144,167,215,0.09));
+        border: 1px solid rgba(217,182,110,0.2);
+        border-radius: 26px;
+        padding: 2rem;
+      }
+
+      .highlight-box h3 {
+        font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+        margin: 0 0 0.65rem;
+        letter-spacing: -0.04em;
+      }
+
+      .tiny-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .tiny-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--muted);
+      }
+
+      .tiny-list .check {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .quote {
+        margin-bottom: 1.25rem;
+        font-size: 1rem;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), #8ca1d5);
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        color: #111827;
+      }
+
+      .person strong {
+        display: block;
+      }
+
+      .person span {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .cta-panel {
+        padding: 0 0 5rem;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, #0f182a, #0d1423);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box h3 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+        letter-spacing: -0.04em;
+      }
+
+      .cta-box p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+      }
+
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .services-grid,
+        .process-grid,
+        .testimonial-grid,
+        .highlight-box,
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+
+        .services-grid,
+        .process-grid,
+        .testimonial-grid {
+          display: grid;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          padding: 1rem 0;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        .cta-box,
+        .footer-row {
+          display: grid;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav-links {
+          justify-content: center;
+          gap: 0.8rem 1rem;
+          font-size: 0.82rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero {
+          padding-top: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="StageBacker Agency home">
+          <span class="brand-mark">S</span>
+          <span>STAGEBACKER</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#results">Results</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-cta">Book a Call</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Speaker outreach & strategy</span>
+            <h1>We turn expertise into booked stages.</h1>
+            <p class="lead">
+              StageBacker Agency helps founders, experts, and leaders secure high-value speaking opportunities,
+              sharpen their positioning, and build a pipeline of visibility that compounds over time.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button" href="#contact">Book a strategy call</a>
+              <a class="button-secondary" href="#services">Explore services</a>
+            </div>
+
+            <div class="stats" aria-label="Agency performance stats">
+              <div class="stat">
+                <strong>150+</strong>
+                <span>Opportunities created</span>
+              </div>
+              <div class="stat">
+                <strong>12+</strong>
+                <span>Industries served</span>
+              </div>
+              <div class="stat">
+                <strong>4.9/5</strong>
+                <span>Client satisfaction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Opportunity pipeline summary">
+            <div class="feature-window">
+              <span class="mini-label">Current pipeline</span>
+              <ul class="opportunity-list">
+                <li>
+                  <span class="check">✓</span>
+                  <span>Conference speaker submissions aligned to your niche</span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>Thought leadership briefings and opportunity targeting</span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>Programmatic lead generation through strategic visibility</span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>Positioning support to translate expertise into influence</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Our services</span>
+            <h2>Strategy that makes your expertise impossible to ignore.</h2>
+            <p>
+              We help individuals and teams turn expertise into community trust, business momentum, and a stronger
+              public presence across conferences, partnerships, and media opportunities.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="card">
+              <div class="icon">🎤</div>
+              <h3>Speaker Outreach</h3>
+              <p>We identify the right opportunities, refine your pitch, and secure high-fit stages that match your expertise.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon">📈</div>
+              <h3>Opportunity Development</h3>
+              <p>We build a strategic pipeline of professional opportunities that expand reach, partnerships, and brand visibility.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🧭</div>
+              <h3>Positioning & Messaging</h3>
+              <p>We sharpen your story so your message resonates with conference organizers, audiences, and decision-makers.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🤝</div>
+              <h3>Brand Visibility</h3>
+              <p>We turn visibility into traction through strategic event targeting, partnership development, and thought-leadership support.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">How we work</span>
+            <h2>A clear process built for traction.</h2>
+          </div>
+
+          <div class="process-grid">
+            <article class="card step">
+              <div class="step-number">01</div>
+              <h3>Assess</h3>
+              <p>We audit your current positioning, audience, and existing opportunities to reveal your strongest leverage points.</p>
+            </article>
+
+            <article class="card step">
+              <div class="step-number">02</div>
+              <h3>Prioritize</h3>
+              <p>We map the most relevant stages, communities, and decision-makers to build a focused visibility strategy.</p>
+            </article>
+
+            <article class="card step">
+              <div class="step-number">03</div>
+              <h3>Package</h3>
+              <p>We shape your messaging and speaker materials so your value is obvious, compelling, and easy to act on.</p>
+            </article>
+
+            <article class="card step">
+              <div class="step-number">04</div>
+              <h3>Activate</h3>
+              <p>We drive the outreach and opportunity flow with consistent follow-through and strategic coordination.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="highlight-band" id="results">
+        <div class="container">
+          <div class="highlight-box">
+            <div>
+              <span class="eyebrow">Why clients choose us</span>
+              <h3>Built for experts who want momentum, not noise.</h3>
+              <p class="lead" style="margin-bottom:0">
+                We’re not here to chase random exposure. We build relevant visibility pathways that create authority,
+                opportunity, and long-term influence.
+              </p>
+            </div>
+
+            <ul class="tiny-list" aria-label="Agency benefits">
+              <li><span class="check">✓</span> Tailored outreach and opportunity selection</li>
+              <li><span class="check">✓</span> Message refinement for speakers and thought leaders</li>
+              <li><span class="check">✓</span> Relationship-driven visibility strategy</li>
+              <li><span class="check">✓</span> Focus on sustainable authority building</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Client feedback</span>
+            <h2>Trusted by leaders building influence.</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="card">
+              <p class="quote">
+                “StageBacker made our positioning sharper and gave us access to speaking opportunities we would never have found on our own.”
+              </p>
+              <div class="person">
+                <div class="avatar">AD</div>
+                <div>
+                  <strong>Amara D.</strong>
+                  <span>Founder, Brightline Labs</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <p class="quote">
+                “Their process is strategic, precise, and deeply aligned with how real thought leaders grow visibility in competitive spaces.”
+              </p>
+              <div class="person">
+                <div class="avatar">JT</div>
+                <div>
+                  <strong>Julian T.</strong>
+                  <span>Executive Advisor</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <p class="quote">
+                “We needed more than networking. We needed a clear path to authority, and StageBacker delivered exactly that.”
+              </p>
+              <div class="person">
+                <div class="avatar">RM</div>
+                <div>
+                  <strong>Rina M.</strong>
+                  <span>Community Lead, Northstar Summit</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-panel" id="contact">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <h3>Ready to get your expertise on the right stage?</h3>
+              <p>Let’s build a visibility strategy that fits your goals and amplifies your voice.</p>
+            </div>
+            <a class="button" href="mailto:hello@stagebackeragency.com">hello@stagebackeragency.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <div>© <span id="year"></span> StageBacker Agency</div>
+        <div>Speaker outreach • opportunity development • strategic visibility</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
-
-
