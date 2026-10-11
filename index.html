@@ -3,48 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="StageBacker Agency helps speakers, experts, and thought leaders secure speaking opportunities and grow their visibility through strategic outreach and opportunity development."
-    />
-    <title>StageBacker Agency | Speaker Outreach & Opportunity Development</title>
-    <meta property="og:title" content="StageBacker Agency" />
-    <meta
-      property="og:description"
-      content="Strategic speaker outreach, opportunity development, and event positioning for high-impact experts."
-    />
-    <meta property="og:type" content="website" />
+    <title>Independent Boss</title>
     <style>
       :root {
-        --bg: #0b1020;
-        --bg-alt: #111a2d;
-        --panel: rgba(17, 26, 45, 0.84);
-        --panel-strong: #131d31;
-        --text: #edf3ff;
-        --muted: #b9c5e2;
-        --accent: #d9b66e;
-        --accent-strong: #f0c871;
-        --accent-soft: rgba(217, 182, 110, 0.18);
-        --line: rgba(255, 255, 255, 0.12);
-        --success: #9de3b4;
-        --shadow: 0 25px 60px rgba(4, 7, 17, 0.5);
+        --page-bg: #f4f1ee;
+        --header-bg: #f6f3f1;
+        --ink: #4b2d22;
+        --ink-soft: #5e4339;
+        --nav: #4d4e60;
+        --gold: #8a5a3d;
+        --gold-deep: #6c3a2a;
+        --gold-soft: #b88966;
+        --hero-bg: #a89a8c;
+        --hero-shadow: rgba(67, 53, 46, 0.32);
+        --vase: #f9f6f3;
+        --vase-shadow: #d9d2ce;
+        --candle: #b88a58;
+        --candle-dark: #8a5a2d;
       }
 
       * { box-sizing: border-box; }
 
-      html {
-        scroll-behavior: smooth;
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--page-bg);
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       body {
-        margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(68, 90, 135, 0.35), transparent 28%),
-          radial-gradient(circle at right, rgba(217, 182, 110, 0.12), transparent 23%),
-          var(--bg);
-        color: var(--text);
-        line-height: 1.6;
+        min-height: 100vh;
       }
 
       a {
@@ -52,723 +41,360 @@
         text-decoration: none;
       }
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
       .container {
-        width: min(1120px, calc(100% - 2rem));
+        width: min(1280px, calc(100% - 32px));
         margin: 0 auto;
       }
 
       .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(12px);
-        background: rgba(11, 16, 32, 0.72);
-        border-bottom: 1px solid var(--line);
+        background: var(--header-bg);
+        border-bottom: 1px solid rgba(75, 45, 34, 0.18);
       }
 
-      .nav {
+      .nav-wrap {
+        min-height: 88px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 80px;
-        gap: 1rem;
+        gap: 24px;
       }
 
       .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-      }
-
-      .brand-mark {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, var(--accent), #b78a2d);
-        color: #121826;
-        font-weight: 900;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        color: var(--muted);
-        font-size: 0.97rem;
-      }
-
-      .nav-links a:hover {
-        color: var(--text);
-      }
-
-      .nav-cta,
-      .button,
-      .button-secondary {
         display: inline-flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0.9rem 1.5rem;
-        border-radius: 999px;
+        text-transform: uppercase;
+        color: var(--ink);
+        letter-spacing: 0.08em;
         font-weight: 700;
-        border: 1px solid transparent;
-        transition: 0.25s ease;
       }
 
-      .nav-cta,
-      .button {
-        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-        color: #101726;
-        box-shadow: 0 15px 35px rgba(217, 182, 110, 0.28);
+      .brand-name {
+        font-size: clamp(1.2rem, 2vw, 2.05rem);
+        line-height: 1;
+        letter-spacing: 0.12em;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        display: inline-block;
+        transform: scaleY(0.92);
       }
 
-      .button:hover,
-      .nav-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 18px 36px rgba(217, 182, 110, 0.38);
-      }
-
-      .button-secondary {
-        background: transparent;
-        border-color: var(--line);
-        color: var(--text);
-      }
-
-      .button-secondary:hover {
-        border-color: rgba(255, 255, 255, 0.32);
-        background: rgba(255, 255, 255, 0.03);
-      }
-
-      .hero {
-        padding: 5rem 0 4rem;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .eyebrow {
+      .brand-tag {
+        margin-top: 4px;
         display: inline-flex;
         align-items: center;
-        gap: 0.55rem;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent-strong);
-        background: var(--accent-soft);
-        border: 1px solid rgba(217, 182, 110, 0.28);
-        border-radius: 999px;
-        padding: 0.6rem 0.9rem;
+        gap: 0;
+        width: fit-content;
       }
 
-      h1 {
-        font-size: clamp(2.7rem, 5vw, 5rem);
-        line-height: 1.04;
-        margin: 1rem 0 1rem;
-        letter-spacing: -0.06em;
-      }
-
-      .lead {
-        margin: 0 0 2rem;
-        max-width: 620px;
-        color: var(--muted);
-        font-size: 1.08rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.25rem;
-      }
-
-      .stat {
-        min-width: 110px;
-      }
-
-      .stat strong {
+      .brand-tag::before,
+      .brand-tag::after {
+        content: "";
         display: block;
-        font-size: 1.7rem;
+        width: 18px;
+        height: 4px;
+        background: var(--gold-deep);
+        margin: 0 4px;
+        border-radius: 2px;
+      }
+
+      .brand-tag .boss {
+        display: inline-block;
+        margin: 0 2px;
+        padding: 2px 8px 3px;
+        background: var(--gold-deep);
+        color: #f2efe8;
+        font-size: 0.52rem;
+        letter-spacing: 0.28em;
+        font-weight: 700;
         line-height: 1.1;
       }
 
-      .stat span {
-        color: var(--muted);
-        font-size: 0.88rem;
-      }
-
-      .hero-card {
-        background: linear-gradient(180deg, rgba(17,26,45,0.7), rgba(11,16,32,0.96));
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        padding: 1.35rem;
-      }
-
-      .feature-window {
-        background: linear-gradient(135deg, rgba(217,182,110,0.08), rgba(85,103,146,0.14));
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 22px;
-        padding: 1.5rem;
-      }
-
-      .mini-label {
-        display: inline-block;
-        margin-bottom: 0.75rem;
-        color: var(--accent-strong);
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-size: 0.72rem;
-      }
-
-      .opportunity-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        gap: 0.9rem;
-      }
-
-      .opportunity-list li {
+      .main-nav {
         display: flex;
-        gap: 0.8rem;
         align-items: center;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 14px;
-        padding: 0.8rem 0.9rem;
+        justify-content: center;
+        gap: 28px;
+        color: var(--nav);
+        font-size: 0.95rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
       }
 
-      .check {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: inline-grid;
-        place-items: center;
-        background: rgba(157, 227, 180, 0.18);
-        color: var(--success);
-        font-weight: 900;
+      .main-nav a {
+        color: var(--nav);
+        transition: opacity 0.2s ease;
       }
 
-      section {
-        padding: 2.25rem 0 4rem;
+      .main-nav a:hover {
+        opacity: 0.75;
       }
 
-      .section-header {
-        max-width: 700px;
-        margin-bottom: 2rem;
-      }
-
-      .section-header p {
-        color: var(--muted);
-      }
-
-      h2 {
-        font-size: clamp(2rem, 3vw, 3.2rem);
-        letter-spacing: -0.05em;
-        margin: 0 0 0.75rem;
-      }
-
-      .services-grid,
-      .process-grid,
-      .testimonial-grid {
-        display: grid;
-        gap: 1.5rem;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .card {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        padding: 1.5rem;
-        box-shadow: 0 24px 50px rgba(6, 10, 21, 0.18);
-      }
-
-      .icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(217,182,110,0.18), rgba(98,116,171,0.15));
-        border: 1px solid rgba(217,182,110,0.22);
-        color: var(--accent-strong);
-        font-size: 1.35rem;
-        margin-bottom: 1rem;
-      }
-
-      .card h3 {
-        margin: 0 0 0.7rem;
-        font-size: 1.3rem;
-      }
-
-      .card p,
-      .step p,
-      .quote {
-        color: var(--muted);
-        margin: 0;
-      }
-
-      .process-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .step-number {
+      .nav-cta {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: rgba(217,182,110,0.14);
-        color: var(--accent-strong);
-        font-weight: 800;
-        margin-bottom: 1rem;
+        min-height: 38px;
+        padding: 0 18px;
+        background: #6d3b2d;
+        border: 1px solid rgba(67, 42, 32, 0.8);
+        color: #f8f3ee;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: none;
+        font-weight: 700;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
       }
 
-      .step h3 {
-        margin: 0 0 0.65rem;
+      .hero {
+        position: relative;
+        min-height: 845px;
+        background: linear-gradient(180deg, rgba(161, 146, 133, 0.82), rgba(161, 146, 133, 0.78)),
+                    linear-gradient(90deg, rgba(16, 16, 16, 0.10), rgba(16, 16, 16, 0.12));
+        overflow: hidden;
       }
 
-      .highlight-band {
-        padding: 1.5rem 0 1rem;
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.02);
       }
 
-      .highlight-box {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 1.5rem;
-        background: linear-gradient(135deg, rgba(217,182,110,0.08), rgba(144,167,215,0.09));
-        border: 1px solid rgba(217,182,110,0.2);
-        border-radius: 26px;
-        padding: 2rem;
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        min-height: 845px;
       }
 
-      .highlight-box h3 {
-        font-size: clamp(1.8rem, 2.5vw, 2.6rem);
-        margin: 0 0 0.65rem;
-        letter-spacing: -0.04em;
+      .scene {
+        position: relative;
+        width: 100%;
+        height: 845px;
       }
 
-      .tiny-list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: grid;
-        gap: 0.8rem;
+      .hero-copy {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -40%);
+        width: min(1200px, 75vw);
+        text-align: center;
+        color: rgba(255,255,255,0.92);
+        font-family: 'Segoe Print', 'Bradley Hand', 'Lucida Handwriting', cursive;
+        font-size: clamp(2.7rem, 5vw, 6rem);
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+        text-shadow: 0 0 1px rgba(255,255,255,0.25);
       }
 
-      .tiny-list li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        color: var(--muted);
-      }
-
-      .tiny-list .check {
-        width: 24px;
-        height: 24px;
-        font-size: 0.8rem;
-      }
-
-      .testimonial-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .quote {
-        margin-bottom: 1.25rem;
-        font-size: 1rem;
-      }
-
-      .person {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
-        padding-top: 1rem;
-        border-top: 1px solid var(--line);
-      }
-
-      .avatar {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), #8ca1d5);
-        display: grid;
-        place-items: center;
-        font-weight: 800;
-        color: #111827;
-      }
-
-      .person strong {
+      .hero-copy span {
         display: block;
       }
 
-      .person span {
-        color: var(--muted);
-        font-size: 0.85rem;
+      .vase {
+        position: absolute;
+        right: 130px;
+        bottom: 60px;
+        width: 220px;
+        height: 360px;
+        background: linear-gradient(180deg, #faf8f7 0%, #e7e1dd 100%);
+        border-radius: 28% 28% 26% 26% / 16% 16% 24% 24%;
+        box-shadow: inset -25px 0 25px rgba(0,0,0,0.02), inset 18px 0 18px rgba(255,255,255,0.7);
       }
 
-      .cta-panel {
-        padding: 0 0 5rem;
+      .vase::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -30px;
+        width: 180px;
+        height: 80px;
+        transform: translateX(-50%);
+        border-radius: 50% 50% 44% 44%;
+        background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(197,190,185,0.7));
       }
 
-      .cta-box {
-        background: linear-gradient(135deg, #0f182a, #0d1423);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 2.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        box-shadow: var(--shadow);
+      .vase::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 220px;
+        border-radius: 40% 40% 18% 18%;
+        background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
       }
 
-      .cta-box h3 {
-        margin: 0 0 0.5rem;
-        font-size: clamp(1.8rem, 2.4vw, 2.8rem);
-        letter-spacing: -0.04em;
+      .stem {
+        position: absolute;
+        right: 170px;
+        top: 50px;
+        width: 8px;
+        height: 290px;
+        background: linear-gradient(180deg, #8a806d, #d1be9a);
+        border-radius: 15px;
+        transform: rotate(18deg);
+        opacity: 0.8;
       }
 
-      .cta-box p {
-        margin: 0;
-        color: var(--muted);
+      .stem::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: -8px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.12));
       }
 
-      .site-footer {
-        border-top: 1px solid var(--line);
-        padding: 2rem 0 3rem;
-        color: var(--muted);
+      .candle {
+        position: absolute;
+        right: 370px;
+        bottom: 36px;
+        width: 250px;
+        height: 190px;
+        border-radius: 38% 38% 46% 46% / 28% 28% 30% 30%;
+        background: linear-gradient(180deg, #d5b385 0%, #a46b38 100%);
+        box-shadow: 0 18px 26px rgba(93, 62, 35, 0.18), inset 0 0 0 2px rgba(103, 72, 40, 0.18);
       }
 
-      .footer-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
+      .candle::before {
+        content: "";
+        position: absolute;
+        inset: 4% 8% 8% 8%;
+        border-radius: inherit;
+        background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(0,0,0,0.06));
+      }
+
+      .candle::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -26px;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 36px;
+        border-radius: 4px 4px 8px 8px;
+        background: linear-gradient(180deg, #f3e9d8, #d7bf92);
+        box-shadow: 0 0 0 2px rgba(194,169,120,0.24);
       }
 
       @media (max-width: 900px) {
-        .hero-grid,
-        .services-grid,
-        .process-grid,
-        .testimonial-grid,
-        .highlight-box,
-        .cta-box {
-          grid-template-columns: 1fr;
-        }
-
-        .services-grid,
-        .process-grid,
-        .testimonial-grid {
-          display: grid;
-        }
-
-        .nav {
+        .nav-wrap {
           flex-wrap: wrap;
-          padding: 1rem 0;
+          justify-content: center;
+          padding: 18px 0;
         }
 
-        .nav-links {
+        .site-header {
+          padding-bottom: 8px;
+        }
+
+        .main-nav {
+          order: 3;
           width: 100%;
-          justify-content: space-between;
           flex-wrap: wrap;
+          gap: 12px 20px;
         }
 
-        .cta-box,
-        .footer-row {
-          display: grid;
-          text-align: center;
+        .nav-cta {
+          margin-left: auto;
+        }
+
+        .hero-copy {
+          width: min(92vw, 900px);
+          transform: translate(-50%, -30%);
+        }
+
+        .vase {
+          right: 28px;
+          width: 150px;
+          height: 260px;
+        }
+
+        .candle {
+          right: 180px;
+          width: 180px;
+          height: 150px;
         }
       }
 
-      @media (max-width: 560px) {
-        .nav-links {
-          justify-content: center;
-          gap: 0.8rem 1rem;
-          font-size: 0.82rem;
+      @media (max-width: 620px) {
+        .brand-name {
+          letter-spacing: 0.06em;
         }
 
-        h1 {
-          font-size: 2.5rem;
+        .main-nav {
+          font-size: 0.84rem;
         }
 
         .hero {
-          padding-top: 3rem;
+          min-height: 640px;
+        }
+
+        .scene {
+          height: 640px;
+        }
+
+        .hero-copy {
+          transform: translate(-50%, -35%);
+          font-size: clamp(2.3rem, 11vw, 4rem);
+        }
+
+        .vase {
+          right: 12px;
+          width: 120px;
+          height: 200px;
+        }
+
+        .candle {
+          right: 120px;
+          width: 160px;
+          height: 130px;
         }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
-      <div class="container nav">
-        <a href="#top" class="brand" aria-label="StageBacker Agency home">
-          <span class="brand-mark">S</span>
-          <span>STAGEBACKER</span>
-        </a>
+      <div class="container nav-wrap">
+        <div class="brand" aria-label="Independent Boss logo">
+          <span class="brand-name">INDEPENDENT</span>
+          <span class="brand-tag"><span class="boss">BOSS</span></span>
+        </div>
 
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#results">Results</a>
-          <a href="#contact">Contact</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#">Home</a>
+          <a href="#">About Me</a>
+          <a href="#">Work with me</a>
+          <a href="#">Podcast</a>
+          <a href="#">Contact</a>
         </nav>
 
-        <a href="#contact" class="nav-cta">Book a Call</a>
+        <a href="#" class="nav-cta">Book an Appointment</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <span class="eyebrow">Speaker outreach & strategy</span>
-            <h1>We turn expertise into booked stages.</h1>
-            <p class="lead">
-              StageBacker Agency helps founders, experts, and leaders secure high-value speaking opportunities,
-              sharpen their positioning, and build a pipeline of visibility that compounds over time.
-            </p>
+    <main>
+      <section class="hero" aria-label="Hero section">
+        <div class="hero-inner container">
+          <div class="scene">
+            <div class="stem" aria-hidden="true"></div>
+            <div class="vase" aria-hidden="true"></div>
+            <div class="candle" aria-hidden="true"></div>
 
-            <div class="hero-actions">
-              <a class="button" href="#contact">Book a strategy call</a>
-              <a class="button-secondary" href="#services">Explore services</a>
+            <div class="hero-copy" aria-label="Hero headline">
+              <span>Make your Business Fun and Easy</span>
+              <span>with Systems and Funnels</span>
             </div>
-
-            <div class="stats" aria-label="Agency performance stats">
-              <div class="stat">
-                <strong>150+</strong>
-                <span>Opportunities created</span>
-              </div>
-              <div class="stat">
-                <strong>12+</strong>
-                <span>Industries served</span>
-              </div>
-              <div class="stat">
-                <strong>4.9/5</strong>
-                <span>Client satisfaction</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card" aria-label="Opportunity pipeline summary">
-            <div class="feature-window">
-              <span class="mini-label">Current pipeline</span>
-              <ul class="opportunity-list">
-                <li>
-                  <span class="check">✓</span>
-                  <span>Conference speaker submissions aligned to your niche</span>
-                </li>
-                <li>
-                  <span class="check">✓</span>
-                  <span>Thought leadership briefings and opportunity targeting</span>
-                </li>
-                <li>
-                  <span class="check">✓</span>
-                  <span>Programmatic lead generation through strategic visibility</span>
-                </li>
-                <li>
-                  <span class="check">✓</span>
-                  <span>Positioning support to translate expertise into influence</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services">
-        <div class="container">
-          <div class="section-header">
-            <span class="eyebrow">Our services</span>
-            <h2>Strategy that makes your expertise impossible to ignore.</h2>
-            <p>
-              We help individuals and teams turn expertise into community trust, business momentum, and a stronger
-              public presence across conferences, partnerships, and media opportunities.
-            </p>
-          </div>
-
-          <div class="services-grid">
-            <article class="card">
-              <div class="icon">🎤</div>
-              <h3>Speaker Outreach</h3>
-              <p>We identify the right opportunities, refine your pitch, and secure high-fit stages that match your expertise.</p>
-            </article>
-
-            <article class="card">
-              <div class="icon">📈</div>
-              <h3>Opportunity Development</h3>
-              <p>We build a strategic pipeline of professional opportunities that expand reach, partnerships, and brand visibility.</p>
-            </article>
-
-            <article class="card">
-              <div class="icon">🧭</div>
-              <h3>Positioning & Messaging</h3>
-              <p>We sharpen your story so your message resonates with conference organizers, audiences, and decision-makers.</p>
-            </article>
-
-            <article class="card">
-              <div class="icon">🤝</div>
-              <h3>Brand Visibility</h3>
-              <p>We turn visibility into traction through strategic event targeting, partnership development, and thought-leadership support.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="process">
-        <div class="container">
-          <div class="section-header">
-            <span class="eyebrow">How we work</span>
-            <h2>A clear process built for traction.</h2>
-          </div>
-
-          <div class="process-grid">
-            <article class="card step">
-              <div class="step-number">01</div>
-              <h3>Assess</h3>
-              <p>We audit your current positioning, audience, and existing opportunities to reveal your strongest leverage points.</p>
-            </article>
-
-            <article class="card step">
-              <div class="step-number">02</div>
-              <h3>Prioritize</h3>
-              <p>We map the most relevant stages, communities, and decision-makers to build a focused visibility strategy.</p>
-            </article>
-
-            <article class="card step">
-              <div class="step-number">03</div>
-              <h3>Package</h3>
-              <p>We shape your messaging and speaker materials so your value is obvious, compelling, and easy to act on.</p>
-            </article>
-
-            <article class="card step">
-              <div class="step-number">04</div>
-              <h3>Activate</h3>
-              <p>We drive the outreach and opportunity flow with consistent follow-through and strategic coordination.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="highlight-band" id="results">
-        <div class="container">
-          <div class="highlight-box">
-            <div>
-              <span class="eyebrow">Why clients choose us</span>
-              <h3>Built for experts who want momentum, not noise.</h3>
-              <p class="lead" style="margin-bottom:0">
-                We’re not here to chase random exposure. We build relevant visibility pathways that create authority,
-                opportunity, and long-term influence.
-              </p>
-            </div>
-
-            <ul class="tiny-list" aria-label="Agency benefits">
-              <li><span class="check">✓</span> Tailored outreach and opportunity selection</li>
-              <li><span class="check">✓</span> Message refinement for speakers and thought leaders</li>
-              <li><span class="check">✓</span> Relationship-driven visibility strategy</li>
-              <li><span class="check">✓</span> Focus on sustainable authority building</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-header">
-            <span class="eyebrow">Client feedback</span>
-            <h2>Trusted by leaders building influence.</h2>
-          </div>
-
-          <div class="testimonial-grid">
-            <article class="card">
-              <p class="quote">
-                “StageBacker made our positioning sharper and gave us access to speaking opportunities we would never have found on our own.”
-              </p>
-              <div class="person">
-                <div class="avatar">AD</div>
-                <div>
-                  <strong>Amara D.</strong>
-                  <span>Founder, Brightline Labs</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card">
-              <p class="quote">
-                “Their process is strategic, precise, and deeply aligned with how real thought leaders grow visibility in competitive spaces.”
-              </p>
-              <div class="person">
-                <div class="avatar">JT</div>
-                <div>
-                  <strong>Julian T.</strong>
-                  <span>Executive Advisor</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card">
-              <p class="quote">
-                “We needed more than networking. We needed a clear path to authority, and StageBacker delivered exactly that.”
-              </p>
-              <div class="person">
-                <div class="avatar">RM</div>
-                <div>
-                  <strong>Rina M.</strong>
-                  <span>Community Lead, Northstar Summit</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-panel" id="contact">
-        <div class="container">
-          <div class="cta-box">
-            <div>
-              <h3>Ready to get your expertise on the right stage?</h3>
-              <p>Let’s build a visibility strategy that fits your goals and amplifies your voice.</p>
-            </div>
-            <a class="button" href="mailto:hello@stagebackeragency.com">hello@stagebackeragency.com</a>
           </div>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-row">
-        <div>© <span id="year"></span> StageBacker Agency</div>
-        <div>Speaker outreach • opportunity development • strategic visibility</div>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
